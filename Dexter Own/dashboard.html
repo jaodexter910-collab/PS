@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <div id="workspaceOverlay" class="workspace-overlay workspace-overlay-hidden"></div>
+    <section id="workspacePanel" class="workspace-panel workspace-panel-hidden">
+      <div class="workspace-header">
+        <div>
+          <p class="eyebrow">Embedded Workspace</p>
+          <h2 id="workspaceTitle">Flights Encoding</h2>
+        </div>
+        <div class="workspace-actions">
+          <button id="closeWorkspaceButton" type="button" class="btn workspace-close-btn">Close</button>
+        </div>
+      </div>
+      <iframe
+        id="workspaceFrame"
+        class="workspace-frame"
+        title="Flights Encoding Workspace"
+        src=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <header class="topbar">
+      <div class="brand">
+        <img src="images/BOCLOGO.png" alt="Business logo" class="brand-logo">
+        <div>
+          <p class="eyebrow">Office Operations</p>
+          <h1>Passenger Service</h1>
+        </div>
+      </div>
+
+      <div class="topbar-meta">
+        <div class="clock-card">
+          <p id="currentDate" class="meta-label">Monday, March 30, 2026</p>
+          <p id="currentTime" class="clock-time">08:00:00 AM</p>
+        </div>
+        <a id="logoutButton" class="quick-link logout-link" href="#">Log Out</a>
+      </div>
+    </header>
+
+    <main class="dashboard-grid">
+      <section class="panel hero-panel">
+        <div>
+          <div class="hero-summary-cards">
+            <article class="metric-card accent-gold flights-average-card">
+              <p class="metric-label">Avg. Incoming Flights per Day</p>
+              <p id="averageFlightsValue" class="metric-value">--</p>
+              <p id="averageFlightsNote" class="metric-note">Waiting for Flights Summary data.</p>
+            </article>
+            <article class="metric-card accent-dark flights-average-card">
+              <p class="metric-label">Avg. Outgoing Flights per Day</p>
+              <p id="averageOutgoingFlightsValue" class="metric-value">--</p>
+              <p id="averageOutgoingFlightsNote" class="metric-note">Waiting for Flights Summary data.</p>
+            </article>
+            <article class="metric-card accent-blue flights-average-card">
+              <p class="metric-label">Avg. Incoming Passenger per Day</p>
+              <p id="averagePassengersValue" class="metric-value">--</p>
+              <p id="averagePassengersNote" class="metric-note">Waiting for Flights Summary data.</p>
+            </article>
+            <article class="metric-card accent-dark flights-average-card">
+              <p class="metric-label">Avg. Outgoing Passengers per Day</p>
+              <p id="averageOutgoingPassengersValue" class="metric-value">--</p>
+              <p id="averageOutgoingPassengersNote" class="metric-note">Waiting for Flights Summary data.</p>
+            </article>
+          </div>
+
+          <p class="eyebrow quote-heading">Inspirational Quotes of the Day</p>
+          <h2 id="dailyQuote">Keep smiling, because life is a beautiful thing.</h2>
+          <p id="dailyQuoteAuthor" class="hero-copy">
+            Marilyn Monroe
+          </p>
+        </div>
+
+        <div class="hero-highlights">
+          <article class="metric-card accent-blue">
+            <p class="metric-label">Staff on Duty</p>
+            <p id="staffOnDutyName" class="metric-value staff-on-duty-name">Name of staff will appear here</p>
+            <p id="staffAttendanceTime" class="metric-note">Attendance timestamp will appear here</p>
+          </article>
+          <article class="metric-card accent-blue">
+            <p class="metric-label">Assigned to You</p>
+            <p id="assignedTaskCount" class="metric-value">0</p>
+            <div id="assignedTaskPreview" class="task-preview-list"></div>
+            <p id="assignedTaskNote" class="metric-note">Pending tasks assigned to the logged-in staff appear here.</p>
+          </article>
+          <article class="metric-card accent-gold">
+            <p class="metric-label">Done Tasks</p>
+            <p id="doneTaskCount" class="metric-value">0</p>
+            <div id="doneTaskPreview" class="task-preview-list"></div>
+            <p class="metric-note">Completed tasks appear here automatically.</p>
+          </article>
+          <article class="metric-card accent-dark">
+            <p class="metric-label">Pending Tasks</p>
+            <p id="pendingTaskCount" class="metric-value">0</p>
+            <div id="pendingTaskPreview" class="task-preview-list"></div>
+            <p class="metric-note">Pending tasks stay visible for the next duty staff until they are completed.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="panel quick-sidebar">
+        <div class="panel-heading">
+          <h3>Quick Access</h3>
+          <span class="panel-tag">Workflows</span>
+        </div>
+        <div class="quick-links quick-sidebar-links">
+          <button
+            type="button"
+            class="quick-link quick-nav-link quick-nav-button"
+            data-workspace-title="Flights Encoding"
+            data-workspace-url="https://docs.google.com/spreadsheets/d/186Q3joyEyPqKRHXpS0q7rkOjCrqfzHjT19LKWyLZ_bQ/edit?usp=sharing">
+            <span class="quick-link-icon">FE</span>
+            <span>Flights Encoding</span>
+          </button>
+          <button
+            type="button"
+            class="quick-link quick-nav-link quick-nav-button"
+            data-workspace-title="Examination Report Encoding"
+            data-workspace-url="https://docs.google.com/spreadsheets/d/1TRUNuELfo4PCzmMag1DRwhC2PACl4rvoMe35zos0j5M/edit?usp=sharing">
+            <span class="quick-link-icon">ER</span>
+            <span>Examination Report Encoding</span>
+          </button>
+          <button
+            type="button"
+            class="quick-link quick-nav-link quick-nav-button"
+            data-workspace-title="Flights Summary"
+            data-workspace-url="https://docs.google.com/spreadsheets/d/1TH9qwYv4TCW6yqQIxdQfN4UKrvVsg1fd3XvM99mN_pg/edit?gid=0#gid=0">
+            <span class="quick-link-icon">FS</span>
+            <span>Flights Summary</span>
+          </button>
+          <button
+            type="button"
+            class="quick-link quick-nav-link quick-nav-button"
+            data-workspace-title="Foreign Currency Declaration Update"
+            data-workspace-url="https://docs.google.com/spreadsheets/d/15WACVallTQgNzQwa0WsSm0HTfRlFMO9Lgbx0GBPWAmM/edit?usp=sharing">
+            <span class="quick-link-icon">FC</span>
+            <span>Foreign Currency Declaration Update</span>
+          </button>
+          <button
+            type="button"
+            class="quick-link quick-nav-link quick-nav-button"
+            data-workspace-title="Annual Data"
+            data-workspace-url="https://docs.google.com/spreadsheets/d/1ldzCkfUD0teONqAFBFHD4XTQhsPjvLu_8ZrDA_xpaJA/edit?usp=sharing">
+            <span class="quick-link-icon">AD</span>
+            <span>Annual Data</span>
+          </button>
+          <a
+            class="quick-link quick-nav-link"
+            href="https://lookerstudio.google.com/reporting/93b18396-27f2-42d5-9183-68c04642f3cb"
+            target="_blank"
+            rel="noopener noreferrer">
+            <span class="quick-link-icon">RG</span>
+            <span>Report Generating Panel</span>
+          </a>
+        </div>
+      </aside>
+
+      <section id="headDutyPanel" class="panel" hidden>
+        <div class="panel-heading">
+          <h3>Duty Staff Log</h3>
+          <span class="panel-tag">Head View</span>
+        </div>
+        <div id="headDutyList" class="attendance-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h3>Sir Jay's Meeting Schedule</h3>
+          <span class="panel-tag">Meetings</span>
+        </div>
+        <form id="meetingForm" class="task-form">
+          <input id="meetingTitle" type="text" placeholder="Meeting Title" autocomplete="off" required>
+          <input id="meetingDate" type="date" required>
+          <input id="meetingTime" type="text" placeholder="Meeting Time" autocomplete="off" required>
+          <input id="meetingPlace" type="text" placeholder="Meeting Place" autocomplete="off" required>
+          <button type="submit" class="btn task-submit-btn">Add Meeting</button>
+        </form>
+        <div id="meetingBoard" class="schedule-list"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h3>Task Tracker</h3>
+          <span class="panel-tag">Shared Queue</span>
+        </div>
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" placeholder="Add a task for the next duty staff" autocomplete="off" required>
+          <select id="taskAssignee" class="task-assignee-select">
+            <option value="General Queue">General Queue</option>
+            <option value="Wendixter Cutanda">Wendixter Cutanda</option>
+            <option value="John Benedict Andaya">John Benedict Andaya</option>
+            <option value="Chienna Rell Langutan">Chienna Rell Langutan</option>
+            <option value="Unfernie Pulvera">Unfernie Pulvera</option>
+            <option value="Erica Santillan">Erica Santillan</option>
+          </select>
+          <button type="submit" class="btn task-submit-btn">Add Task</button>
+        </form>
+        <div id="taskBoard" class="task-board"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h3>Operations Snapshot</h3>
+          <span class="panel-tag">Live View</span>
+        </div>
+        <div class="snapshot-grid">
+          <article class="snapshot-card">
+            <p class="snapshot-label">Reception Queue</p>
+            <p class="snapshot-value">06</p>
+            <p class="snapshot-trend positive">Steady and manageable</p>
+          </article>
+          <article class="snapshot-card">
+            <p class="snapshot-label">Requests Cleared</p>
+            <p class="snapshot-value">29</p>
+            <p class="snapshot-trend positive">8 completed this hour</p>
+          </article>
+          <article class="snapshot-card">
+            <p class="snapshot-label">Support Tickets</p>
+            <p class="snapshot-value">04</p>
+            <p class="snapshot-trend neutral">2 waiting for assignment</p>
+          </article>
+          <article class="snapshot-card">
+            <p class="snapshot-label">Room Usage</p>
+            <p class="snapshot-value">71%</p>
+            <p class="snapshot-trend caution">Main board room booked at 2 PM</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel spotlight-panel">
+        <div class="panel-heading">
+          <h3>Focus for the Day</h3>
+          <span class="panel-tag">Team Pulse</span>
+        </div>
+        <div class="focus-card">
+          <p class="focus-kicker">Operational target</p>
+          <h3>Keep same-day processing smooth before the afternoon cutoff.</h3>
+          <p>Flag blockers early so support teams can respond before end-of-day requests build up.</p>
+        </div>
+      </section>
+    </main>
+
+    <button id="messengerToggle" type="button" class="messenger-toggle" aria-label="Open staff messenger">
+      <span class="messenger-toggle-icon" aria-hidden="true">
+        <span class="robot-head"></span>
+        <span class="robot-eye robot-eye-left"></span>
+        <span class="robot-eye robot-eye-right"></span>
+        <span class="robot-mouth"></span>
+        <span class="robot-antenna"></span>
+      </span>
+      <span id="messengerUnreadCount" class="messenger-unread-count">0</span>
+    </button>
+
+    <section id="messengerPanel" class="messenger-panel messenger-panel-hidden">
+      <div class="messenger-header">
+        <div>
+          <p class="eyebrow">Staff Messenger</p>
+          <h3>Robot Assistant</h3>
+        </div>
+        <button id="messengerClose" type="button" class="btn workspace-close-btn">Close</button>
+      </div>
+      <div id="messengerThread" class="messenger-thread"></div>
+      <form id="messengerForm" class="messenger-form">
+        <select id="messengerRecipient" class="task-assignee-select">
+          <option value="All Staff">All Staff</option>
+          <option value="Wendixter Cutanda">Wendixter Cutanda</option>
+          <option value="John Benedict Andaya">John Benedict Andaya</option>
+          <option value="Chienna Rell Langutan">Chienna Rell Langutan</option>
+          <option value="Unfernie Pulvera">Unfernie Pulvera</option>
+          <option value="Erica Santillan">Erica Santillan</option>
+          <option value="Jay A. Oyao">Jay A. Oyao</option>
+        </select>
+        <input id="messengerInput" type="text" placeholder="Type a message for the staff" autocomplete="off" required>
+        <button type="submit" class="btn task-submit-btn">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

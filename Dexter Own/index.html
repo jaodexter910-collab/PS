@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-hero">
+      <button id="openLoginButton" type="button" class="hero-login-btn">Log In</button>
+
+      <div class="brand-mark">
+        <img src="images/BOCLOGO.png" alt="Business logo" class="brand-logo">
+        <div class="hero-heading">
+          <p class="eyebrow">Bureau of Customs - Subport of Mactan</p>
+          <h1>
+            Office of the
+            <span class="hero-title-accent">Passenger Service</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="hero-points">
+        <article class="hero-point">
+          <h2>Report Generating</h2>
+          <p>Where all reportings can be generated.</p>
+        </article>
+        <article class="hero-point">
+          <h2>Office Ready</h2>
+          <p>Designed for PS staff, admin teams, and shared screens.</p>
+        </article>
+      </div>
+    </section>
+
+    <div id="loginOverlay" class="login-overlay login-overlay-hidden"></div>
+
+    <section id="loginCard" class="login-card login-card-hidden">
+      <div class="login-header">
+        <p class="eyebrow">Sign In</p>
+        <h2>PS Staff Login</h2>
+        <p class="login-copy">Use your assigned credentials to continue.</p>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <label class="input-group" for="username">
+          <span>Username</span>
+          <input id="username" name="username" type="text" placeholder="Enter username" autocomplete="username" required>
+        </label>
+
+        <label class="input-group" for="password">
+          <span>Password</span>
+          <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+        </label>
+
+        <div class="login-meta">
+          <span>PS staff credentials enabled</span>
+          <span id="loginClock">08:00 AM</span>
+        </div>
+
+        <button type="submit" class="btn">Enter Dashboard</button>
+        <p id="error" class="error" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
